@@ -5,12 +5,46 @@ body{
 	margin:0;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?bzkgrq');
+  src:  url('../fonts/icomoon.eot?bzkgrq#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?bzkgrq') format('truetype'),
+    url('../fonts/icomoon.woff?bzkgrq') format('woff'),
+    url('../fonts/icomoon.svg?bzkgrq#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\4d";
+}
+.icon-cross:before {
+  content: "\ca";
+}
+
+
 
 /* muchos elementos puede recibir 2 o mas nombre de clases abreviando codigo*/
 .contenedor{
 
 	/*para centrar los elementos*/
-	width: 800px;
+	max-width: 800px; /**/
 	margin: 0 auto;
 	/*border: 1px solid red;*/
 	position: relative;
@@ -22,6 +56,7 @@ body{
 	background-image: url('../imagenes/background.png');
 	/*la imagen toma la mejor distribucion para acomodarse*/
 	background-size: cover;
+	background-color: #466173;
 }
 
 
@@ -69,7 +104,7 @@ section.portada{
 
 .contenedor .button:hover{
 	background:#f44336; 
-	    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -100,8 +135,6 @@ nav.menuprincipal{
 	padding: 20px;
 	margin-left: 40px;
 
-
-	
 }
 
 .menuprincipal ul li a{
@@ -275,13 +308,10 @@ table{
 th{
 	background-color: #0A2F66;
 	color: #fff;
-}
-
-th{
-
 	padding: 10px;
 	text-align: center;
 }
+
 
  td{
 	padding: 20px;
@@ -291,3 +321,331 @@ table , td , th{
 	border: 1px solid #0A2F66;
 	border-collapse: collapse;
 }
+
+.burguer-boton{
+
+	visibility: hidden;
+}
+
+
+/*
+.cntd-video{
+	
+	height: 500px;
+	 /*padding-top: 56.25%; = (height(px)x100)/width(px)*/
+	/*margin-bottom: 20px;	 
+	}
+
+.iframe{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}*/
+
+.cntd-video{
+	display:flex;
+	justify-content: center;
+	margin-bottom: 80px;
+	
+}
+
+.cntd-video .contenedor{
+	max-width: 500px;
+	width: 100%;
+	height: 300px;
+	border: 3px solid #3c5b6e;
+
+}
+
+.iframe{
+	width: 100%;
+	height: 100%;
+
+
+}
+
+/*Tablets*/
+@media screen and (max-width: 800px) {
+	
+	/*portada*/
+	.portada h1{
+		font-size: 50px;
+		margin-top: 25px;
+	}
+
+	.portada h4{
+
+		font-size: 20px;
+	}
+
+
+	section.portada{
+		/*se acomoda al contenido que lleva*/
+		height: auto;
+	}
+
+	.contenedor .button{
+		display: inline-block;
+		margin-bottom:30px; 
+	}
+
+	/*Guitarras*/
+	
+	#guitarras{
+		text-align: center;
+	}
+
+	img.right, img.left{
+
+		float: none;
+		position: static;/*posicion por defecto*/
+	}
+
+
+	.guitarras h3{
+		margin:0;
+	}
+
+
+	.guitarras li{
+		list-style: none;
+	}
+
+
+	/*dos clases dentro de un mismo elemento*/
+	article.guitarra.b{
+		
+		height: auto;
+	}
+	
+
+	div.contenedor-guitarra-b{
+
+	position: static;
+	margin:0;
+}
+	div.contenedor-guitarra-a{
+
+		padding: 0;
+	}
+	
+	.tabla{
+		margin: 50px 20px;
+	}
+	.tabla .contenedor{
+		overflow: auto;
+		
+	}
+
+}
+
+	/*dispositivos moviles footer*/
+	@media screen and (max-width: 770px) {
+		
+		.header{
+			text-align: center;
+		}
+
+
+		nav.menuprincipal{
+			
+			display: block;
+			position: static;
+			margin: 0;
+			
+		}
+		
+
+		nav.menuprincipal li:first-child{
+			margin: 0;
+		}
+
+		nav.menuprincipal ul{
+			padding: 0;
+		}
+
+		.contenedor{
+			text-align: center;
+		}
+		
+		.footer .contenedor{
+			
+			display: block;
+
+		}
+
+		div.contacto{
+
+			margin: 0 auto;
+		}
+
+		.col1{
+			margin: 0;
+		}
+
+		.formulario{
+			display: block;
+			margin: 0 auto;
+			width: 300px;
+		}
+
+
+
+		input[type="text"], input[type="email"]{
+			font-size: 14px;
+			padding: 6px;
+		}
+
+
+		textarea{
+			width: 100%;
+		}
+
+
+		input[type="radio"],
+		input[type="checkbox"]{
+
+			zoom: 1.2;
+			
+		}
+
+	}
+
+
+	@media screen and (max-width:650px){
+
+
+		.precios .header .logotipo{
+			margin: 50px 0;
+		}
+
+		.precios .header .burguer-boton, .menuprincipal{
+			position: fixed;
+		}
+		.precios .header .menuprincipal{
+			position: fixed;
+		}
+
+
+		.burguer-boton{
+
+			width: 40px;
+			border-radius: 50%;
+			line-height: 40px;
+			height: 40px;
+			display: inline-block;
+			text-align: center;
+			cursor: pointer;
+			background-color: #395667;
+			position: absolute;
+			left: 20px;
+			top: 20px;
+			z-index: 3;
+			visibility: visible;
+			color: #fff;
+		}	
+
+		.portada .contenedor{
+
+			position: static;
+			
+		}
+	
+
+		/*contenedor del iframe*/
+		.contenedor{
+			position: static;
+		}
+
+		.cntd-video .iframe{
+			position: static;
+		}
+
+		section.portada{
+
+			position: relative;
+		}
+
+		nav.menuprincipal{
+
+			
+			background: rgba(255,60,88,.9);
+			position: absolute;
+			left:-100%;
+			width: 100%;
+			top: 0;
+			bottom:0;
+			right: 0
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			transition: .3s;
+
+		}
+
+		.menuprincipal.active{
+			
+			left: 0;
+		}
+
+		.menuprincipal ul{
+			flex: 1;
+		}
+
+		nav.menuprincipal li{
+
+			display: block;
+			margin: 0;
+			padding: 8px 0;
+			border-bottom: 1px solid #fff;
+			
+		}
+
+		nav.menuprincipal li:first-child{
+			border-top: 1px solid #fff;
+		}
+
+
+		.header .contenedor{
+			position: static;
+		}
+
+		.contenedor h1{
+
+			font-size: 40px;
+		}
+
+
+		.contenedor h4{
+
+			font-size: 15px;
+		}
+
+
+		.guitarras img{
+			width: 250px;
+		}
+
+		.guitarras h3{
+
+			font-size: 30px;
+		}
+
+		.contenedor-guitarra-b ol{
+
+			padding: 0;
+		}
+	}
+
+	
+	@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  		.background {
+
+   		 	background-image: url('../imagenes/background2x.png');
+  		}
+	}
+
